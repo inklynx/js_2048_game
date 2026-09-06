@@ -20,6 +20,8 @@ function render() {
   const score = game.getScore();
   const gameStatus = game.getStatus();
 
+  const lastSpawned = game.getLastSpawnedTile();
+
   scoreElement.textContent = score;
 
   let cellIndex = 0;
@@ -34,6 +36,15 @@ function render() {
 
       if (value !== 0) {
         cell.classList.add(`field-cell--${value}`);
+      }
+
+      if (
+        lastSpawned &&
+        lastSpawned.row === r &&
+        lastSpawned.col === c &&
+        value !== 0
+      ) {
+        cell.classList.add('field-cell--spawn');
       }
 
       cellIndex++;

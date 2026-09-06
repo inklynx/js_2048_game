@@ -15,12 +15,6 @@ body {
   justify-content: center;
   align-items: center;
 
-  // text-align: center;
-  // vertical-align: middle;
-  // width: 100%;
-  // height: 100%;
-  // overflow: hidden;
-
   border-radius: 4px;
   font-weight: bold;
   font-size: 2.2rem;
@@ -89,9 +83,8 @@ body {
 }
 
 // TODO: select direction/tile (UX)
-.field-cell--new {
-  animation: popIn 200ms ease-in-out;
-  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.2);
+.field-cell--spawn {
+  animation: pop-in 200ms ease-out forwards;
 }
 
 .game-field {
@@ -221,19 +214,18 @@ h1 {
   height: 150px;
 }
 
-// // TODO: select direction/tile (UX)
-// @keyframes popIn {
-//   0% {
-//     transform: scale(0.8);
-//     opacity: 0.5;
-//   }
+@keyframes pop-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
 
-//   50% {
-//     transform: scale(1.1);
-//   }
+  50% {
+    transform: scale(1.1);
+  }
 
-//   100% {
-//     transform: scale(1);
-//     opacity: 1;
-//   }
-// }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

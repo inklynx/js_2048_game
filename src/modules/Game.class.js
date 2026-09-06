@@ -148,13 +148,23 @@ class Game {
     }
 
     if (emptyCells.length === 0) {
-      return;
+      this.lastSpawnedTile = null;
+
+      return null;
     }
 
     const randomIndex = Math.floor(Math.random() * emptyCells.length);
     const { row, col } = emptyCells[randomIndex];
 
     this.state[row][col] = Math.random() < 0.1 ? 4 : 2;
+
+    this.lastSpawnedTile = { row, col };
+
+    return this.lastSpawnedTile;
+  }
+
+  getLastSpawnedTile() {
+    return this.lastSpawnedTile;
   }
 
   slideRow(row) {
