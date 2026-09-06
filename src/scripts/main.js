@@ -46,7 +46,7 @@ function render() {
     messageLose.classList.add('hidden');
 
     mainButton.textContent = 'Start';
-    mainButton.localName = 'button start';
+    mainButton.className = 'button start';
   } else {
     messageStart.classList.add('hidden');
     mainButton.textContent = 'Restart';
